@@ -1,0 +1,393 @@
+:root {
+  --darkgray: #212329;
+  --lightgrey: #272829;
+  --brightred: #F9423D;
+  --white: #fff;
+  --lightred: #F9433DCC;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--darkgray);
+}
+
+a {
+  text-decoration: none;
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  color: var(--white)
+}
+
+a:hover {
+  color: var(--brightred);
+}
+
+/* HEADER */
+
+header {
+  position: relative;
+  padding: 0;
+  background-color: var(--lightred);
+  width: 100%;
+  border: solid 1px var(--brightred);
+}
+
+.navbar {
+  width: 100%;
+  height: 60px;
+  max-width: 1200px;
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  align-content: center;
+  justify-content: space-between;
+  overflow: visible;
+  margin-left: 20%;
+  padding-right: 20%;
+}
+
+ul {
+  list-style: none;
+}
+
+.navbar .logo .a {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.navbar .links {
+  display: flex;
+  gap: 2rem;
+  justify-content: end;
+}
+
+.navbar .toggle-btn {
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  display: none;
+}
+
+/* DROPDOWN MENU */
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  right: 2rem;
+  top: 80px;
+  width: 300px;
+  height: 0;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: height .2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.dropdown-menu.open {
+  height: 200px;
+  position: absolute;
+}
+.dropdown-menu li {
+  padding: 0.7rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dropdown-menu .action-btn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+/* Hero Section */
+
+.intro {
+  background-color: var(--darkgray);  
+  position:relative;
+}
+
+.intro-container {
+  display: grid;
+  grid-template-columns: 20% 1fr 1fr 20%;
+  align-items: center;
+  justify-self: center;
+  width: 100%;
+  height: 60vh;
+  background-color: var(--darkgray);
+}
+
+.intro-content {
+  justify-self: start;
+  color: var(--white);
+  width: 80%;
+  margin: 0;
+}
+
+.intro-content h1 {
+  font-size: 2rem;
+}
+
+.intro-content p {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+}
+
+.intro-btn {
+  font-size: 1rem;
+  background-color: var(--brightred);
+  padding: 8px 20px;
+  border: none;
+  border-radius: 4px;
+  color: var(--white);
+  margin-top: 2rem;
+  cursor: pointer;
+  position: relative;
+  transition: all .35s;
+  outline: none;
+}
+
+.intro-btn a {
+  position: relative;
+  z-index: 2;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.intro-btn:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  transition: all .35s;
+  border-radius: 4px;
+  background: var(--lightred);
+}
+
+.intro-btn:hover {
+  color: var(--white);
+}
+
+.intro-btn:hover:after {
+  width: 100%;
+}
+
+#intro-img {
+  height: 300px;
+  width: 300px;
+}
+
+.intro-img-container {
+  text-align: center;
+}
+
+/* Waves */ 
+
+.waves {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.waves svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 124px;
+}
+
+.waves .shape-fill {
+  fill: var(--darkgray);
+}
+
+
+
+/* About */
+
+.about {
+  background-color: var(--white);
+  position: relative;
+}
+
+ .about-container {
+  display: grid;
+  grid-template-columns: 20% 1fr 1fr 20%;
+  align-items: center;
+  justify-self: center;;
+  width: 100%;
+  height: auto;
+}
+
+.about-content {
+  justify-self: start;
+  margin: 175px 20px 0 175px;
+  margin-left: 20px;
+  margin-top: 175px;
+  width: 80%;
+  
+}
+
+.about-content h2 {
+  font-size: 1.75rem;
+  color: var(--darkgray)
+}
+
+.about-content p {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  color: var(--darkgray)
+}
+
+.about-img-container {
+  text-align: center;
+}
+
+#about-img {
+  height: 300px;
+  width: 300px;
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 15%;
+  border: 2px solid var(--brightred);
+  margin-top: 175px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+
+/* NAV BAR */
+
+@media (max-width: 992px) {
+  .navbar .links,
+  .navbar .action-btn {
+    display: none;
+  }
+
+  .navbar .toggle-btn {
+    display: block;
+  }
+
+  .dropdown-menu {
+    display: block;
+  }
+
+  .intro {
+    position:unset;
+  }
+}
+
+ @media (max-width: 576px) {
+  .dropdown-menu {
+    left: 2rem;
+    width: 300px;
+  }
+
+  .intro {
+    position:unset;
+  }
+
+  .intro-content {
+    padding-top: 25px;
+  }
+}
+
+/* MAIN CONTENT */
+
+
+@media (max-width: 768px) {
+  .intro {
+    position:unset;
+  }
+  
+  .intro-container {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 100px;
+    padding-top: 50px;
+    height: 60vh;
+    background-color: var(--darkgray);
+  }
+
+  .about-container {
+    display: grid;
+    grid-template-columns: auto;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+    height: 80vh;
+    padding-top: 75px;
+    background-color: var(--white);
+  }
+
+  .intro-content, .about-content {
+    justify-self: center;
+    color: var(--white);
+    width: 80%;
+    margin: 0;
+  }
+
+  .intro-content h1, .about-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .intro-content p, .about-content p {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  #intro-img, #about-img {
+    display: none;
+  }
+
+  .white-space {
+    display: none;
+  }
+
+  .waves svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 124px;
+    }
+  }
+
+
+@media (max-width: 480px) {
+    .intro-content, .about-content {
+      text-align: center;
+    }
+    .intro-content h1, .about-content h1 {
+      font-size: 2.8rem;
+    }
+    .intro-content p, .about-content p {
+      margin-top: 2rem;
+      font-size: 1.5rem;
+    }
+
+    .intro-btn {
+      padding: 12px 36px;
+      margin-top: 2.5rem;
+    }
+}
